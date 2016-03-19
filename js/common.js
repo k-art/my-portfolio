@@ -17,9 +17,9 @@ function checkSize(){
 $(window).on('scroll', function() {
   if ($('.sandwich').css('display') == 'none') {
     if ($(this).scrollTop() > 82) {
-      $(".main-navigation").addClass("main-navigation_fixed").fadeIn('fast');
+      $('.main-navigation').addClass('main-navigation_fixed').fadeIn('fast');
     } else {
-        $(".main-navigation").removeClass("main-navigation_fixed").fadeOUt('fast');
+        $('.main-navigation').removeClass('main-navigation_fixed');
     }
   }
 });
