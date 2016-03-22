@@ -213,7 +213,7 @@ body {
 }
 
 .quotes-img {
-  margin: 150px auto 50px;
+  margin: 130px auto 30px;
   width: 100px;
   text-align: center;
 }
@@ -261,23 +261,50 @@ body {
   } 
 }
 
+.mini-quote {
+    display: none;
+  }
+
 .promo {
+  position: relative;
   margin: 0 auto 70px;
-  width: 60%;
+  width: 80%;
   text-align: center;
-  font-size: 24px;
+  font-size: 26px;
   line-height: 36px;
   font-style: italic;
 }
 
 @media(max-width: 768px) {
   .quotes-img {
-    margin-top: 60px;
-    margin-bottom: 40px;
+    display: none;
   }
   
   .promo {
+    margin-top: 50px;
     margin-bottom: 50px;
+    font-size: 24px;
+  }
+  
+  .mini-quote {
+    position: relative;
+    display: inline-block;
+    font-size: 60px;
+    vertical-align: top;
+
+    &-left {
+      top: 0;
+      left: -10px;
+    }
+    &-right {
+      bottom: 0;
+      right: -10px;
+    }
+  }
+}
+
+@media(max-width: 480px) {
+  .promo {
     width: 90%;
   }
 }

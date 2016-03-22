@@ -1,30 +1,7 @@
 //check on resize
 
 $(document).ready(function() {
-  checkSize();
-  $(window).resize(checkSize);
-});
-
-function checkSize(){
-  if ($('.sandwich').css('display') == 'none') {
-    $('.main-navigation').css({'display': 'block'});
-  } else {
-    $('.main-navigation').css({'display': 'none'});
-  }
-}
-
-//big-menu-fixed
-$(window).on('scroll', function() {
-  if ($('.sandwich').css('display') == 'none') {
-    if ($(this).scrollTop() > 82) {
-      $('.main-navigation').addClass('main-navigation_fixed').fadeIn('fast');
-    } else {
-        $('.main-navigation').removeClass('main-navigation_fixed');
-    }
-  }
-});
-
-//sandwich-menu 
+  //sandwich-menu 
 $('.sandwich').on('click', function() {
   $(this).toggleClass('active');
   if ($(this).hasClass('active')) {
@@ -51,4 +28,25 @@ $('a[href^="#"], a[href^="."]').on('click', function() {
   }
   return false; // выключаем стандартное действие
 });
+  checkSize();
+  $(window).resize(checkSize);
+});
 
+function checkSize(){
+  if ($('.sandwich').css('display') == 'none') {
+    $('.main-navigation').css({'display': 'block'});
+  } else {
+    $('.main-navigation').css({'display': 'none'});
+  }
+}
+
+//big-menu-fixed
+$(window).on('scroll', function() {
+  if ($('.sandwich').css('display') == 'none') {
+    if ($(this).scrollTop() > 82) {
+      $('.main-navigation').addClass('main-navigation_fixed').fadeIn('fast');
+    } else {
+        $('.main-navigation').removeClass('main-navigation_fixed');
+    }
+  }
+});
