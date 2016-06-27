@@ -12,6 +12,7 @@
 /* base */
 
 body {
+  min-width: 300px;
   font-family: "PT Sans", "Arial", sans-serif;
   font-size: 18px;
   line-height: 22px;
@@ -21,7 +22,6 @@ body {
 
 .container {
   max-width: 1200px;
-  min-width: 300px;
   margin: 0 auto;
   padding: 0 10px;
 }
@@ -297,7 +297,7 @@ body {
       left: -10px;
     }
     &-right {
-      bottom: 0;
+      bottom: 5px;
       right: -10px;
     }
   }
@@ -344,6 +344,12 @@ body {
       margin: 20px 0;
       font-size: 18px;
       line-height: 28px;
+    }
+    &_list {
+      margin-bottom: 30px;
+    }
+    &_list-item {
+      margin-bottom: 5px;
     }
   }
 }
@@ -410,6 +416,15 @@ body {
       min-width: 300px;
       max-width: 80%;
       text-align: center;
+      &_list {
+        padding: 0;
+        padding-left: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        max-width: 280px;
+        text-align: left;
+      }
     }
   }
 }
@@ -608,6 +623,7 @@ body {
     line-height: 30px;
     border-bottom: 1px solid @color-pink;
     color: @color-pink;
+    text-shadow: #fff 1px 1px 0, #fff -1px -1px 0, #fff -1px 1px 0, #fff 1px -1px 0;
   }
   
   &_text {
@@ -616,6 +632,12 @@ body {
   }
 }
 
+@media(max-width: 768px) {
+  .item-legend {
+    visibility: visible;
+    opacity: 1;
+  }
+}
 
 @media(max-width: 700px) {
   .portfolio {
