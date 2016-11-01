@@ -605,15 +605,26 @@ body {
 }
 
 .item-legend--mod {
+  margin-left: 2%;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0s linear 0.3s;
   position: absolute;
-  bottom: 35px;
-  width: 100%;
+  bottom: 40px;
+  width: 96%;
   min-height: 150px;
   background-color: white;
-  background-color: rgba(255, 255, 255, .9);
+  /* background-color: rgba(255, 255, 255, .9); */
+  background: 
+    linear-gradient(
+    #dfdfdf, transparent 1px
+    ),
+    linear-gradient(
+    90deg,
+    #dfdfdf, white 1px
+    );
+  background-size: 20px 20px;
+  background-position: center center;
   color: #3e3e3e;
   border-top: 1px solid #d0d0d0;
   border-bottom: 1px solid #d0d0d0;
