@@ -588,139 +588,78 @@ body {
   text-decoration: none;
   box-shadow: 0 0 16px 2px rgba(0,1,1,.2);
   border: 1px solid #d0d0d0;
-
+  transition: all .4s ease-in-out;
+  overflow: hidden;
   
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     box-shadow: 0 0 16px 2px rgba(0,1,1,.4);
-    transition-duration: .3s;
   }
-  &:hover .item-legend,
-  &:hover .item-legend--mod,
-  &:active .item-legend,
-  &:active .item-legend--mod {
-    opacity: 1;
-    visibility: visible;
-    transition-delay: 0s;
-  }
-}
 
-.item-legend--mod {
-  margin-left: 2%;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0s linear 0.3s;
-  position: absolute;
-  bottom: 40px;
-  width: 96%;
-  min-height: 150px;
-  background-color: white;
-  /* background-color: rgba(255, 255, 255, .9); */
-  background: 
-    linear-gradient(
-    #dfdfdf, transparent 1px
-    ),
-    linear-gradient(
-    90deg,
-    #dfdfdf, white 1px
-    );
-  background-size: 20px 20px;
-  background-position: center center;
-  color: #3e3e3e;
-  border-top: 1px solid #d0d0d0;
-  border-bottom: 1px solid #d0d0d0;
-  box-shadow: 0 0 16px 2px rgba(0,1,1,.2);
-  &_title {
-    position: relative;
-    z-index: 10;
-    margin: 40px 0 10px;
-    font-size: 24px;
-    line-height: 30px;
-  }
-  &_text {
-    margin: 0;
-    margin-bottom: 10px;
-    & span {
-      padding: 5px;
-      margin-bottom: 5px;
-      display: inline-block;
-      vertical-align: top;
-      color: white;
-      background-color: @color-pink;
-      &:nth-child(even) {
-        background-color: @color-blue;
+  @media(min-width: 769px) {
+    &:hover .item-legend,
+    &:active .item-legend {
+
+      &--bottom {
+        bottom: 0;
       }
     }
   }
-}
-.item-legend_stamp {
-  z-index: 9;
-  padding: 7px;
-  position: absolute;
-  left: 15px;
-  top: 7px;
-  font-size: 28px;
-  line-height: 28px;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: @color-pink;
-  color: fade(@color-pink, 70%);
-  border: 3px solid @color-pink;
-  border-color: fade(@color-pink, 60%);
-  transform: rotate(-5deg);
-  &--2 {
-    z-index: 5;
-    left: auto;
-    top: 10px;
-    right: 15px;
-    font-size: 18px;
-    line-height: 18px;
-    color: @color-blue;
-    color: fade(@color-blue, 70%);
-    border: 3px solid @color-blue;
-    border-color: fade(@color-blue, 60%);
-    transform: rotate(7deg);
-  }
+
 }
 
-/* .item-legend {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0s linear 0.3s;
+.item-legend {
+  z-index: 1;
   position: absolute;
-  left: 0;
-  bottom: 0;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   width: 100%;
-  height: 150px;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: center;
-  overflow: hidden;
-  background-color: @color-blue;
-  background-color: fade(@color-blue, 90%);
-  color: #fff;
-  
-  
+  transition: all .4s ease-in-out;
+  color: white;
+  box-sizing: border-box;
+
+  &--top {
+    bottom: 88%;
+    height: 50px;
+    font-weight: bold;
+    background-color: fade(@color-pink, 80%);
+  }
+  &--bottom {
+    bottom: 0;
+    background-color: fade(#353541, 80%);
+
+    @media(min-width: 769px) {
+      height: 180px;
+      bottom: -120px;
+    }
+  }
+
   &_title {
-    padding: 0 10px 10px;
-    margin: 15px 0;
+    margin-top: 0;
+    margin-bottom: 10px;
     font-size: 24px;
     line-height: 30px;
-    border-bottom: 1px solid @color-pink;
-    color: @color-pink;
-    text-shadow: #fff 1px 1px 0, #fff -1px -1px 0, #fff -1px 1px 0, #fff 1px -1px 0;
   }
-  
-  &_text {
-    padding: 0 10px;
-    margin: 0;
-  }
-} */
 
-@media(max-width: 768px) {
-  .item-legend--mod {
-    visibility: visible;
-    opacity: 1;
+  &_note {
+    font-size: 15px;
   }
+
+  &_text {
+    margin: 0;
+    margin-bottom: 5px;
+    line-height: 27px;
+
+    & span {
+      border-bottom: 1px solid white;
+      font-weight: bold;
+    }
+  }
+}
+@media(max-width: 768px) {
 }
 
 @media(max-width: 700px) {
@@ -734,7 +673,6 @@ body {
 @media(max-width: 480px) {
   
   .portfolio-item {
-    
     margin: 20px 0;
   }
 }
@@ -743,8 +681,6 @@ body {
 /* footer */
 
 .main-footer {
-//  padding: 10px 0 0;
-//  background-color: @color-pink;
   color: #fff;
   
   &_title {
@@ -803,7 +739,6 @@ body {
 .social {
   padding: 50px 0;
   text-align: center;
-//  border-top: 1px solid #fff;
   background-color: @color-pink;
   
   &-link {
